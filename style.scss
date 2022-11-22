@@ -1,0 +1,57 @@
+@use './reset';
+
+:root {
+  --brk-mobile: 375px;
+
+  /* Colors */
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-light: hsl(212, 45%, 89%);
+  --clr-grayblue: hsl(220, 15%, 55%);
+  --clr-dark: hsl(218, 44%, 22%);
+
+  /* Typography */
+  --fs-body: 15px;
+  --ff: 'Outfit', sans-serif;
+  --fw-normal: 400;
+  --fw-bold: 700;
+}
+
+body {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  background-color: var(--clr-light);
+  font-size: var(--fs-body);
+  font-family: var(--ff);
+  color: var(--clr-grayblue);
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: var(--fw-bold);
+  color: var(--clr-dark);
+  margin-bottom: 1rem;
+}
+
+.card {
+  width: min(calc(var(--brk-mobile) - 2rem), calc(100% - 2rem));
+  margin-inline: auto;
+
+  background-color: var(--clr-white);
+
+  --inner-radius: 8px;
+  --padding: 1rem;
+
+  padding: var(--padding);
+  border-radius: calc(var(--inner-radius) + var(--padding));;
+
+  text-align: center;
+
+  &__img {
+    border-radius: calc(var(--inner-radius));
+  }
+
+  &__content {
+    padding: 1.2rem;
+  }
+}
